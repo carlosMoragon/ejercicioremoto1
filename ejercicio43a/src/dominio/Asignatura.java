@@ -1,4 +1,4 @@
-package domino;
+package dominio;
 
 public class Asignatura{
 
