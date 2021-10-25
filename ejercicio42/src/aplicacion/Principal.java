@@ -49,7 +49,7 @@ public class Principal{
 			i++;*/
 		//array.length te da el numero de posiciones que tiene mi array
 		
-		int[] datos = {0,1,2,3,4,5,6,7,8,9};
+		int[] datos = {0,1,2,3,4,5,6,7,8,9};{
 		System.out.println(array[4]);
 		
 		}
