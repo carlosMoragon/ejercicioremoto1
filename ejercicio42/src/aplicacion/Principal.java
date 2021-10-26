@@ -35,7 +35,7 @@ public class Principal{
 
 		int[] array = new int[10];
 
-		/*System.out.println(array[1]);
+	/*System.out.println(array[1]);
 		String[] texto = new String[5];
 		texto[0] = "Hola mundo";
 		System.out.println(texto[0]);
