@@ -19,7 +19,7 @@ public class Principal{
 	String nombre = sc.next();
 	System.out.println("Su nombre es " + nombre);
 	sc.close();*/
-	//Opcion 1
+	/*//Opcion 1
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Dime un entero:");
 	int numero1 = sc.nextInt();
@@ -36,6 +36,12 @@ public class Principal{
 	}
 	System.out.println("El resultado es: " + suma);
 	sc.close();
+	*/
+	
+	Scanner sc = new Scanner(System.in);
+	int suma = 0;
+	for(int i = 0; i 
+	System.out.println("Dime un numero");
 
 
 }
