@@ -21,10 +21,10 @@ public class Principal{
 				System.out.println("El numero no es ni 1 ni 2");
 		}*/
 		boolean valor = true;
+		Scanner sc = new Scanner(System.in);
 	while(valor){
 		try{
 		System.out.println("Intruzca un numero del 1 al 7: ");
-		Scanner sc = new Scanner(System.in);
 		int numero = sc.nextInt();
 		valor = false;
 		switch(numero){
@@ -46,14 +46,14 @@ public class Principal{
 				 valor = true;
 
 		}
-		sc.close();
 		}catch(InputMismatchException e){ 
-			
+			sc.next();
 			System.out.println("Intentalo de nuevo");
 			
 			 
 		}
 	}  
+		sc.close();
 
 }
 }
