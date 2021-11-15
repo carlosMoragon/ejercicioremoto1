@@ -3,6 +3,11 @@ import java.util.ArrayList;
 public class Libreta{
 	ArrayList<Contacto> contactos = new ArrayList<>();
 
+	public Libreta(Contacto nombre , Contacto numeroDeTelefono){
+		this.nombre = nombre;
+		this.numeroDeTelefono = numeroDeTelefono;
+	}
+
 	public void annadirContacto(Contacto contacto){
 		contactos.add(contacto);
 	}

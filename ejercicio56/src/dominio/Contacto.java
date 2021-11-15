@@ -2,9 +2,14 @@ package dominio;
 
 public class Contacto{
 	private String nombre;
-	private int numeroDeTelefono;
+	private String numeroDeTelefono;
 	
-	public Contacto(String nombre, int numeroDeTelefono){
+	public Contacto(){
+		nombre = "";
+		numeroDeTelefono = "";
+	}
+	
+	public Contacto(String nombre, String numeroDeTelefono){
 		this.nombre = nombre;
 		this.numeroDeTelefono = numeroDeTelefono;
 	}
@@ -16,10 +21,10 @@ public class Contacto{
 		this.nombre = nombre;
 	}
 
-	public int getNumeroDeTelefono(){
+	public String getNumeroDeTelefono(){
 		return numeroDeTelefono;
 	}
-	public void setNumeroDeTelefono(int numeroDeTelefono){
+	public void setNumeroDeTelefono(String numeroDeTelefono){
 		this.numeroDeTelefono = numeroDeTelefono;
 	}
 
