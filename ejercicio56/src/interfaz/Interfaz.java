@@ -1,5 +1,6 @@
 package interfaz;
 import dominio.*;
+import java.lang.ArrayIndexOutOfBoundsException;
 
 public class Interfaz{
 		Libreta libreta = new Libreta();
