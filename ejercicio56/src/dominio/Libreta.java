@@ -1,11 +1,14 @@
 package dominio;
 import java.util.ArrayList;
 public class Libreta{
-	ArrayList<Contacto> contactos = new ArrayList<>();
+	private ArrayList<Contacto> contactos = new ArrayList<>();
+	
+	public ArrayList<Contacto> getContactos(){
+		return contactos;
+	}
 
-	public Libreta(Contacto nombre , Contacto numeroDeTelefono){
-		this.nombre = nombre;
-		this.numeroDeTelefono = numeroDeTelefono;
+	public void setContactos(ArrayList<Contacto> contactos){
+		this.contactos = contactos;
 	}
 
 	public void annadirContacto(Contacto contacto){
@@ -13,9 +16,13 @@ public class Libreta{
 	}
 
 	public String toString(){
-		for(int i = 0; i< contactos.size(); i++){
-			contactos.get(i);
+		//StringBuilder nos permite realizar modificaciones en un objeto, no como String que crea un nuevo String al actualizarlo
+		StringBuilder mensaje = new StringBuilder(); 
+		//metodo for para recorrer una colección como ArrayList
+		for(Contacto contacto: contactos){
+		//para añadirle informacion al StringBuilder utilizamos el método .append
+		mensaje.append(contacto + "\n");
 		}
-		return "En tu libreta tienes estos contactos: " + "\n" + contactos;
+		return "En tu libreta tienes estos contactos: " + mensaje.toString();
 	}
 }
