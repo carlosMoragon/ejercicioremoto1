@@ -3,10 +3,11 @@ import interfaz.*;
 import java.util.Scanner;
 public class Principal{
 	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
+		String sentencia = "";
+		for(int i = 0; i < args.length; i++){
+			sentencia += args[i] + " ";
+		}
 		Interfaz interfaz = new Interfaz();
-		Interfaz sentencia;
-		Interfaz.valueOf(sentencia) = sc.next();
 		interfaz.procesarPeticion(sentencia);
 	}
 }
