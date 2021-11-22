@@ -29,6 +29,6 @@ public class Contacto{
 	}
 
 	public String toString(){
-		return nombre + " tiene de numero de telefono el: " + numeroDeTelefono;
+		return nombre + " " + numeroDeTelefono;
 	}
 }
