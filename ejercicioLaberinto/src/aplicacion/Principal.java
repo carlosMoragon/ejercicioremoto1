@@ -1,9 +1,10 @@
 package aplicacion;
 
-//import dominio.*;
+import dominio.*;
 
 public class Principal{
 	public static void main(String args[]){
-		System.out.println("Test");
+		Mapa mapa = new Mapa();
+		mapa.leerMapa();
 	}
 }
