@@ -38,9 +38,9 @@ public class Mapa{
 
 			//array[][] = {
 			
-			/*for(int i = 0; i<array.length; i++){
+			for(int i = 0; i<array.length; i++){
 				array[i] = array1[i];
-			}*/
+			}
 
 			for(int i = 0; i < array.length; i++){
 				lectura2 += array[i] + "\n";
