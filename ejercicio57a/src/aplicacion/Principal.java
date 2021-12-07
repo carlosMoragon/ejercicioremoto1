@@ -56,5 +56,10 @@ public class Principal{
 
 		asignaturas.add(new Asignatura(1, "Mates", 1, 45));
 
+		Asignatura asignatura = new Asignatura(20, "Fisica", 1, 99);
+		String ejemplo = "String de ejemplo";
+		System.out.println(ejemplo.equals(asignatura));
+		System.out.println(asignatura.equals(ejemplo));
+
 	}
 }

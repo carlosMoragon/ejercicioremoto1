@@ -29,31 +29,39 @@ public class Asignatura{
 		this.nombre = nombre;
 	}
 
-	public String toString(){
-		return nombre;
-	}
 	/*
 	//La sintaxis es la siguiente
 	public boolean equals(Object o){
-		//sirve para comparar otros objetos con si mismo
-		//vamos a editarlo para que dos objetos sean iguales si sus nombres son iguales
-		
-		//En la siguiente linea convierte el objeto o a la clase asignatura
-		Asignatura a = (Asignatura) o;
-		//En la siguiente linea igualamos el nombre del objeto a (que es el objeto o convertido a la clase Asignatura, y por eso lo tenemos que llamar con el getNombre(), por que es privado) con 
-		//la variable nombre de nuestra clase asignatura
-		if(a.getNombre().equals(nombre)){
-			return true;
-		}
-		return false;
-	}*/
+//sirve para comparar otros objetos con si mismo
+//vamos a editarlo para que dos objetos sean iguales si sus nombres son iguales
 
+//En la siguiente linea convierte el objeto o a la clase asignatura
+Asignatura a = (Asignatura) o;
+//En la siguiente linea igualamos el nombre del objeto a (que es el objeto o convertido a la clase Asignatura, y por eso lo tenemos que llamar con el getNombre(), por que es privado) con 
+//la variable nombre de nuestra clase asignatura
+if(a.getNombre().equals(nombre)){
+return true;
+}
+return false;
+}*/
+
+//es como el toString() pero lo que hace es declarar cuando 2 objetos son iguales. Devuelve un boolean
 	public boolean equals(Object o){
-		Asignatura a = (Asignatura) o;
-		if(a.getId() == id){
+		if(o == this){
 			return true;
 		}
+		//instanceof devuelve true si el objeto pertence a la clase indicada
+		if(o instanceof Asignatura){
+			Asignatura a = (Asignatura) o;
+			if(a.getId() == id){
+				return true;
+			}
+		}
 		return false;
+	}
+
+	public String toString(){
+		return nombre;
 	}
 
 }
