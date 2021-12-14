@@ -19,29 +19,34 @@ public class Mapa{
 
 
 			String filas[] = lectura.split("\n");
-			String read[] = filas[0].split("");
+			String columnas[] = filas[0].split("");
 			
-			String [][] array = new String[filas.length][read.length];
+			String [][] array = new String[filas.length][columnas.length];
 
 
-			String[] lineas = lectura.split("\n");
-			
-			for(int i = 0; i < lineas.length; i++){
-				String[] linea = lineas[i].split("");
+			for(int i = 0; i < filas.length; i++){
+				String[] linea = filas[i].split("");
 				for(int j = 0; j < linea.length; j++){
 					array[i][j] = linea[j];
 				}
 			}
-			/*for(int i = 0; i < array.length; i++){
-				lectura2 += array[i] + "\n";
-			}*/
-
+			
+			for(int i = 0; i < array.length; i++){
+				for(int j = 0; j < array.length; j++){
+					if(j != columnas.length - 1){
+						lectura2 += array[i][j];
+					}else{
+						lectura2 += "\n";
+					}
+				}
+			}
+/*
 			for(int i = 0; i < lineas.length; i++){
-				for(int j = 0; j < linea.lenght; j++){
+				for(int j = 0; j < array.lenght; j++){
 					lectura2 = array[i][j];
 				}
 			}
-
+*/
 			System.out.println(lectura2);
 			sc.close();
 
