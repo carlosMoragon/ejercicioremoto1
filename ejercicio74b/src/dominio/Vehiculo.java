@@ -1,6 +1,7 @@
 package dominio;
 
-public class Vehiculo{
+//abstract es para que no se pueda crear objetos de la clase padre, pero permite crear objetos de las clases hijos
+public abstract class Vehiculo{
 
 	private String marca;
 	private String modelo;
@@ -40,10 +41,10 @@ public class Vehiculo{
 	public void setPrecioBase(int precioBase){
 		this.precioBase = precioBase;
 	}
-
-	public int precioFinal(){
-		return precioBase;
-	}
+	
+	//utilizamos abstract para decir que este metodo es como una plantilla para las clases hijas, pero que no se va a utilizar en si.
+	//Al tener un meotodo abstracto la clase tiene que estar definida como abstracta, si no da un error.
+	public abstract int precioFinal();
 
 	public String toString(){
 		return marca  + ", " +  modelo + " con un precio base de " + precioBase + "€";
