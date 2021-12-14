@@ -17,37 +17,30 @@ public class Mapa{
 				lectura += sc.nextLine() + "\n";
 			}
 
-			//System.out.println(lectura);	
-
-			/*String array1[] = lectura.split("");
-			array1 = lectura.split("\n");
-			*/
 
 			String filas[] = lectura.split("\n");
 			String read[] = filas[0].split("");
 			
-			/*String read[] = lectura.split("");
-
-			for(int i = lectura.indexOf("\n"); i < read.length - i++; i++){
-				lectura2 += lectura.replace(read[i], "");
-			}
-
-			String columnas[] = lectura2.split("");*/
-
 			String [][] array = new String[filas.length][read.length];
 
-			//array[][] = {
+
+			String[] lineas = lectura.split("\n");
 			
-			for(int i = 0; i<array.length; i++){
-				array[i] = array1[i];
+			for(int i = 0; i < lineas.length; i++){
+				String[] linea = lineas[i].split("");
+				for(int j = 0; j < linea.length; j++){
+					array[i][j] = linea[j];
+				}
 			}
-
-			for(int i = 0; i < array.length; i++){
+			/*for(int i = 0; i < array.length; i++){
 				lectura2 += array[i] + "\n";
-			}
+			}*/
 
-			//System.out.println(filas.length);
-			//System.out.println(read.length);
+			for(int i = 0; i < lineas.length; i++){
+				for(int j = 0; j < linea.lenght; j++){
+					lectura2 = array[i][j];
+				}
+			}
 
 			System.out.println(lectura2);
 			sc.close();

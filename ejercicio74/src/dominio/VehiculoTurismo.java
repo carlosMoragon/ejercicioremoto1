@@ -1,10 +1,18 @@
 package dominio;
 
 public class VehiculoTurismo{
-	
+
 	private String marca;
 	private String modelo;
-	private float precioBase;
+	private int precioBase;
+	private int numeroDePlazas;
+
+	public VehiculoTurismo(String marca, String modelo, int precioBase, int numeroDePlazas){
+		this.marca = marca;
+		this.modelo = modelo;
+		this.precioBase = precioBase;
+		this.numeroDePlazas = numeroDePlazas;
+	}
 
 	public String getMarca(){
 		return marca;
@@ -22,28 +30,31 @@ public class VehiculoTurismo{
 		this.modelo = modelo;
 	}
 
-	public float getPrecioBase(){
+	public int getPrecioBase(){
 		return precioBase;
 	}
 
-	public void setPrecioBase(float precioBase){
-		this.precioBase = precioBase;
-	}
-	
-	public VehiculoTurismo(String marca, String modelo, float precioBase){
-		this.marca = marca;
-		this.modelo = modelo;
+	public void setPrecioBase(int precioBase){
 		this.precioBase = precioBase;
 	}
 
-	public String precioFinal(int numeroDePlazas){
-		float precioFinal = 0;
-		if(numeroDePlazas <= 5){
-			precioFinal += precioBase;
-		}else if(numeroDePlazas > 5){
-			precioFinal += precioBase + 0.1 * precioBase;
+	public int precioFinal(){
+		int precioFinal = precioBase;
+		if(numeroDePlazas > 5){
+			precioFinal += 0.1 * precioBase * (numeroDePlazas - 5);
 		}
-		return "El precio final, del "+ marca + " " + modelo + " con " + numeroDePlazas + " plazas, es de " + precioFinal;
+		/*
+		   if(numeroDePlazas <= 5){
+		   precioFinal += precioBase;
+		   }else if(numeroDePlazas > 5){
+		   precioFinal += precioBase + 0.1 * precioBase * (numeroDePlazas - 5);
+		   }*/
+
+		return precioFinal;
 	}
 
+	public String toString(){
+		return marca  + ", " +  modelo + ", con un numero de plazas " + numeroDePlazas + " con un precio base de " + precioBase + "€, y con un precio final de " + precioFinal() + "€";
+
+	}
 }

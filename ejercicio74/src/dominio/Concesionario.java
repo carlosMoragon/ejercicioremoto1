@@ -1,12 +1,17 @@
 package dominio;
 
+import java.util.ArrayList;
+
 public class Concesionario{
-	/*
-	VehiculoTurismo audi = new VehiculoTurismo("audi", "a1", 21.900);
-	VehiculoTurismo seat = new VehiculoTurismo("seat", "ibiza", 16.520);
-	VehiculoTurismo suzuki = new VehiculoTurismo("suzuki", "across", 53.700);
-	
-	audi.precioFinal(5);
-	seat.precioFinal(4);
-	suzuki.precioFinal(7);*/
+	ArrayList<VehiculoTurismo> catalogo = new ArrayList<>();
+	public void addVehiculo(VehiculoTurismo vehiculo){
+		catalogo.add(vehiculo);
+	}
+	public String toString(){
+		StringBuilder mensaje = new StringBuilder();
+		for(VehiculoTurismo vehiculo: catalogo){
+			mensaje.append(vehiculo + "\n");
+		}
+		return mensaje.toString();
+	}
 }
