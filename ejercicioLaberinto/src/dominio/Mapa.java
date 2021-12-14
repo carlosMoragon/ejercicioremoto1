@@ -30,12 +30,12 @@ public class Mapa{
 					array[i][j] = linea[j];
 				}
 			}
+			System.out.println(columnas.length);
 			
 			for(int i = 0; i < array.length; i++){
 				for(int j = 0; j < array.length; j++){
-					if(j != columnas.length - 1){
 						lectura2 += array[i][j];
-					}else{
+					if(j == columnas.length - 1){
 						lectura2 += "\n";
 					}
 				}
