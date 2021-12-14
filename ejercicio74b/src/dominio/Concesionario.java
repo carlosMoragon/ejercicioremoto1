@@ -3,14 +3,17 @@ package dominio;
 import java.util.ArrayList;
 
 public class Concesionario{
-	ArrayList<VehiculoTurismo> catalogo = new ArrayList<>();
-	public void addVehiculo(VehiculoTurismo vehiculo){
+	//Al ser el catalogo de tipo vehiculo (la clase general) solo vamos a tener un catalogo que es lo que queremos.
+	ArrayList<Vehiculo> catalogo = new ArrayList<>();
+
+	public void addVehiculo(Vehiculo vehiculo){
 		catalogo.add(vehiculo);
 	}
 
 	public int calcularPrecioTotal(){
 		int precioTotal = 0;
-		for(VehiculoTurismo vehiculo: catalogo){
+		for(Vehiculo vehiculo: catalogo){
+			//vehiculo.precioFinal() invoca al metodo de precioFinal() de la clase que sea el objeto, es decir, Furgoneta, VehiculoTurismo, etc.
 			precioTotal += vehiculo.precioFinal();
 		}
 		return precioTotal;
@@ -19,7 +22,7 @@ public class Concesionario{
 	public String toString(){
 		StringBuilder mensaje = new StringBuilder();
 		mensaje.append("El precio total de los vehiculos es: " + calcularPrecioTotal()+"\n");
-		for(VehiculoTurismo vehiculo: catalogo){
+		for(Vehiculo vehiculo: catalogo){
 			mensaje.append(vehiculo + "\n");
 		}
 		return mensaje.toString();
