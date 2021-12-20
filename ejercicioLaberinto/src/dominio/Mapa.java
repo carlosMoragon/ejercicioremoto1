@@ -30,23 +30,25 @@ public class Mapa{
 					array[i][j] = linea[j];
 				}
 			}
-			System.out.println(columnas.length);
+			//System.out.println(columnas.length);
 			
 			for(int i = 0; i < array.length; i++){
 				for(int j = 0; j < array.length; j++){
+					if(array[i][j].equals("X")){
+						lectura2 += array[i][j].replace("X", "█");
+						//lectura2 += array[i][j];
+					}else{
 						lectura2 += array[i][j];
+					}
 					if(j == columnas.length - 1){
 						lectura2 += "\n";
 					}
 				}
 			}
-/*
-			for(int i = 0; i < lineas.length; i++){
-				for(int j = 0; j < array.lenght; j++){
-					lectura2 = array[i][j];
-				}
-			}
-*/
+			
+			
+
+
 			System.out.println(lectura2);
 			sc.close();
 
@@ -54,4 +56,9 @@ public class Mapa{
 		}
 
 	}
+
+
+	/*public void move(){
+		leerMapa();
+		*/
 }
