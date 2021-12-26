@@ -4,11 +4,11 @@ public abstract class Parcela{
 
 	private String nombre = "";
 	private int piesDeArbol = 0;
-	private double ingresosTotales = 0.00;
-	private double gastosTotales = 0.00;
-	private double beneficios = 0.00;
+	private float ingresosTotales = 0;
+	private float gastosTotales = 0;
+	private float beneficios = 0;
 	
-	public Parcela(String nombre, int piesDeArbol, double ingresosTotales, double gastosTotales, double beneficios){
+	public Parcela(String nombre, int piesDeArbol, float ingresosTotales, float gastosTotales, float beneficios){
 		this.nombre = nombre;
 		this.piesDeArbol = piesDeArbol;
 		this.ingresosTotales = ingresosTotales;
@@ -33,28 +33,29 @@ public abstract class Parcela{
 		this.piesDeArbol = piesDeArbol;
 	}
 
-	public double getIngresosTotales(){
+	public float getIngresosTotales(){
 		return ingresosTotales;
 	}
 
-	public void setIngresosTotales(double ingresosTotales){
+	public void setIngresosTotales(float ingresosTotales){
 		this.ingresosTotales = ingresosTotales;
 	}
 
- 	public double getGastosTotales(){
+ 	public float getGastosTotales(){
                 return gastosTotales;
         }
 
-        public void setGastosTotales(double gastosTotales){
+        public void setGastosTotales(float gastosTotales){
                 this.gastosTotales = gastosTotales;
         }
 
- 	public double getBeneficios(){
+ 	public float getBeneficios(){
                 return beneficios;
         }
 
-        public void setBeeficios(double beneficios){
+        public void setBeeficios(float beneficios){
                 this.beneficios = beneficios;
         }
-
+	
+	public abstract float getIngresos();
 }
