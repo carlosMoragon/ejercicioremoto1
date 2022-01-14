@@ -8,12 +8,11 @@ public abstract class Parcela{
 	private float gastosTotales = 0;
 	private float beneficios = 0;
 	
-	public Parcela(String nombre, int piesDeArbol, float ingresosTotales, float gastosTotales, float beneficios){
+	public Parcela(String nombre, int piesDeArbol, float ingresosTotales, float gastosTotales){
 		this.nombre = nombre;
 		this.piesDeArbol = piesDeArbol;
 		this.ingresosTotales = ingresosTotales;
 		this.gastosTotales = gastosTotales;
-		this.beneficios = beneficios;
 	}
 
 
@@ -49,13 +48,19 @@ public abstract class Parcela{
                 this.gastosTotales = gastosTotales;
         }
 
- 	public float getBeneficios(){
-                return beneficios;
-        }
+	public float getBeneficios(){
+		beneficios = getIngresos() - gastosTotales;
+		return beneficios;
+	}
 
-        public void setBeeficios(float beneficios){
-                this.beneficios = beneficios;
-        }
-	
 	public abstract float getIngresos();
+
+	public abstract String toString(){
+                String mensaje = getNombre() + "\n" + "---------------" +
+                        "\n" + "Numero de pies de árbol: " + getPiesDeArbol() +
+                        "\n" + "Ingresos totales de la parcela: " + getIngresos() +
+                        "\n" + "Gastos totales en la parcela: " + getGastosTotales() +
+                        "\n" + "Beneficios de la parcela: " + getBeneficios;
+		return mensaje;
+	}
 }
