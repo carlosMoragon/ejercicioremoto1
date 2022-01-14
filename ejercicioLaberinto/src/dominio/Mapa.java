@@ -7,12 +7,13 @@ public class Mapa{
 	private static String NOMBRE_MAPA = "lab5.txt";
 	private String lectura = "";
 	private String lectura2 = "";
+	private String WALL = "█";
 
 	public void leerMapa(){
 		try{
 			File file = new File(NOMBRE_MAPA);
 			Scanner sc = new Scanner(file);
-			
+
 			while(sc.hasNext()){
 				lectura += sc.nextLine() + "\n";
 			}
@@ -20,7 +21,7 @@ public class Mapa{
 
 			String filas[] = lectura.split("\n");
 			String columnas[] = filas[0].split("");
-			
+
 			String [][] array = new String[filas.length][columnas.length];
 
 
@@ -31,7 +32,7 @@ public class Mapa{
 				}
 			}
 			//System.out.println(columnas.length);
-			
+
 			for(int i = 0; i < array.length; i++){
 				for(int j = 0; j < array.length; j++){
 					if(array[i][j].equals("X")){
@@ -45,20 +46,25 @@ public class Mapa{
 					}
 				}
 			}
-			
-			
 
 
-			System.out.println(lectura2);
+
+
+			//System.out.println(lectura2);
 			sc.close();
 
 		}catch(FileNotFoundException f){
 		}
 
 	}
+	
+	public void move(){
+		Scanner sc = new Scanner(System.in);
+		String movil = sc.next();
+		if(movil.equals(w){
+		}
 
-
-	/*public void move(){
-		leerMapa();
-		*/
+		System.out.println(":" + movil);
+	}
+	
 }
