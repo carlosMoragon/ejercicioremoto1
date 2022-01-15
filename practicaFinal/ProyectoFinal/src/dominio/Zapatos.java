@@ -3,12 +3,11 @@ package dominio;
 public abstract class Zapatos{
 	private String nombre;
 	private float talla;
-	private String color;
-
-	public Zapatos(String nombre, float talla, String color){
+	private int precioInicial;
+	public Zapatos(String nombre, float talla, int precioInicial){
 		this.nombre = nombre;
 		this.talla = talla;
-		this.color = color;
+		this.precioInicial = precioInicial;
 	}
 	
 	public String getNombre(){
@@ -27,15 +26,18 @@ public abstract class Zapatos{
 		this.talla = talla;
 	}
 
-	public String getColor(){
-		return color;
+	public int getPrecioInicial(){
+		return precioInicial;
 	}
 
-	public void setColor(String color){
-		this.color = color;
+	public void setPrecioInicial(int precioInicial){
+		this.precioInicial = precioInicial;
 	}
+	
+	public abstract int getPrecioFinal();
 
 	public String toString(){
-		return "Nombre: " + nombre + ". Talla: " + talla + ". Color: " + color + ".";
+		return "Nombre: " + nombre + ". Talla: " + talla + ".\nPrecio Inicial: " + precioInicial +
+			". precio final: " + getPrecioFinal();
 	}
 }
