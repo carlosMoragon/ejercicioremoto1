@@ -13,7 +13,28 @@ public class Registro{
 		this.zapatos = zapatos;
 	}
 
-	public addZapato(Zapatos zapato){
+	public void addZapato(Zapatos zapato){
 		zapatos.add(zapato);
+	}
+	
+	public String toCSV(){
+		StringBuilder mensaje = new StringBuilder();
+		mensaje.append("tipo, nombre, talla, color/material, precio inicial, precio final");
+		for(Zapatos zapato: zapatos){
+			mensaje.append(zapato + "\n");
+		}
+		return mensaje.toString();
+	}
+
+	public String toString(){
+		StringBuilder mensaje = new StringBuilder();
+		if(zapatos.size() != 0){	
+			for(Zapatos zapato: zapatos){
+				mensaje.append(zapato + "\n");
+			}
+		}else{
+			mensaje.append("No tienes ningún zapato en el registro");
+		}
+		return "Tienes estos zapatos en el registro:\n" + mensaje.toString();
 	}
 }
