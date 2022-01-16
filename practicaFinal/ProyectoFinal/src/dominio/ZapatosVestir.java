@@ -8,6 +8,10 @@ public class ZapatosVestir extends Zapatos{
 		super(nombre, talla, precioInicial);
 		this.material = material;
 	}
+
+	public ZapatosVestir(String nombre){
+		super(nombre);
+	}
 	
 	public String getMaterial(){
 		return material;

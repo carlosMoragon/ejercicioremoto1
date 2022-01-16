@@ -8,6 +8,6 @@ public class Principal{
 			sentencia += args[i] + " ";
 		}
 		Interfaz interfaz = new Interfaz();
-		interfaz.procesarPeticion();
+		interfaz.procesarPeticion(sentencia);
 	}
 }

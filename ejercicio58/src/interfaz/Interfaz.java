@@ -67,7 +67,7 @@ public class Interfaz{
 	private static void generarCSV(Libreta libreta){
 		try{
 			FileWriter fw = new FileWriter(NOMBRE_FICHERO_CSV);
-			fw.write(libreta.toCSV);
+			fw.write(libreta.toCSV());
 			fw.close();
 			System.out.println("Se ha generado el fichero CSV");
 		}catch(IOException e){

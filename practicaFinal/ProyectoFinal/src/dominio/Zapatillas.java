@@ -9,7 +9,11 @@ public class Zapatillas extends Zapatos{
 		super(nombre, talla, precioInicial);
 		this.color = color;
 	}
-	
+
+	public Zapatillas(String nombre){
+		super(nombre);
+	}
+
 	public String getColor(){
 		return color;
 	}

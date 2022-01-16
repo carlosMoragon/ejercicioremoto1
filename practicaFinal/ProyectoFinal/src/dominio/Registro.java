@@ -17,6 +17,10 @@ public class Registro{
 		zapatos.add(zapato);
 	}
 	
+	public void deleteZapato(Zapatos zapato){
+		zapatos.remove(zapato);
+	}
+
 	public String toCSV(){
 		StringBuilder mensaje = new StringBuilder();
 		mensaje.append("tipo, nombre, talla, color/material, precio inicial, precio final");

@@ -1,11 +1,11 @@
-package intefaz;
+package interfaz;
 import dominio.*;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-public class Intefaz{
+public class Interfaz{
 
 	private static String NOMBRE_FICHERO = "registro.csv";
 
@@ -30,6 +30,17 @@ public class Intefaz{
 			}
 
 
+		}else if(partes[0].equalsIgnoreCase("delete")){
+			if(partes[1].equalsIgnoreCase("zapatilla") && partes.length == 3){
+				Zapatillas zapatilla = new Zapatillas(partes[2]);
+				registro.deleteZapato(zapatilla);
+			}else if(partes[1].equalsIgnoreCase("zapato") && partes[2].equalsIgnoreCase("de") &&
+					partes[3].equalsIgnoreCase("vestir") && partes.length == 5){
+				ZapatosVestir zapatoVestir = new ZapatosVestir(partes[4]);
+				registro.deleteZapato(zapatoVestir);
+			}else{
+				System.out.println("El sistema no reconoce que zapato quieres eliminar");
+			}
 		}
 	}
 
