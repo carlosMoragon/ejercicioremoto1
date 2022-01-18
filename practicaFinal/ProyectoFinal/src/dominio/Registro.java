@@ -14,7 +14,12 @@ public class Registro{
 	}
 
 	public void addZapato(Zapatos zapato){
-		zapatos.add(zapato);
+		if(zapatos.add(zapato)){
+			zapatos.add(zapato);
+			System.out.println("se añadio el zapato al arrayList");
+		}else{
+			System.out.println("no se añaden los zapatos al arrayList");
+		}
 	}
 	
 	public void deleteZapato(Zapatos zapato){
