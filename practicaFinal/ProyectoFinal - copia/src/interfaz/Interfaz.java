@@ -41,9 +41,7 @@ public class Interfaz{
 			}else{
 				System.out.println("El sistema no reconoce que zapato quieres eliminar");
 			}
-		}else if(partes[0].equalsIgnoreCase("help") && partes.length == 1){
-			printHelp();
-		}else if(partes[0].equalsIgnoreCase("edit") && 
+		}
 	}
 
 	private static String printHelp(){
