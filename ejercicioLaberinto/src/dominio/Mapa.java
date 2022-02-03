@@ -8,8 +8,8 @@ public class Mapa{
 	private String lectura = "";
 	private String lectura2 = "";
 	private String WALL = "█";
-
-	public void leerMapa(){
+	private String[][] mapa = leerMapa();
+	public String[][] leerMapa(){
 		try{
 			File file = new File(NOMBRE_MAPA);
 			Scanner sc = new Scanner(file);
@@ -18,53 +18,57 @@ public class Mapa{
 				lectura += sc.nextLine() + "\n";
 			}
 
-
-			String filas[] = lectura.split("\n");
-			String columnas[] = filas[0].split("");
-
-			String [][] array = new String[filas.length][columnas.length];
-
-
-			for(int i = 0; i < filas.length; i++){
-				String[] linea = filas[i].split("");
-				for(int j = 0; j < linea.length; j++){
-					array[i][j] = linea[j];
-				}
-			}
-			//System.out.println(columnas.length);
-
-			for(int i = 0; i < array.length; i++){
-				for(int j = 0; j < array.length; j++){
-					if(array[i][j].equals("X")){
-						lectura2 += array[i][j].replace("X", "█");
-						//lectura2 += array[i][j];
-					}else{
-						lectura2 += array[i][j];
-					}
-					if(j == columnas.length - 1){
-						lectura2 += "\n";
-					}
-				}
-			}
-
-
-
-
-			//System.out.println(lectura2);
 			sc.close();
-
 		}catch(FileNotFoundException f){
 		}
+		String filas[] = lectura.split("\n");
+		String columnas[] = filas[0].split("");
 
-	}
-	
-	public void move(){
-		Scanner sc = new Scanner(System.in);
-		String movil = sc.next();
-		if(movil.equals(w){
+		String [][] array = new String[filas.length][columnas.length];;;
+		//array = new String[filas.length][columnas.length];
+
+
+		for(int i = 0; i < filas.length; i++){
+			String[] linea = filas[i].split("");
+			for(int j = 0; j < linea.length; j++){
+				array[i][j] = linea[j];
+			}
+		}
+		//System.out.println(columnas.length);
+
+		for(int i = 0; i < array.length; i++){
+			for(int j = 0; j < array.length; j++){
+				if(array[i][j].equals("X")){
+					lectura2 += array[i][j].replace("X", "█");
+					//lectura2 += array[i][j];
+				}else{
+					lectura2 += array[i][j];
+				}
+				if(j == columnas.length - 1){
+					lectura2 += "\n";
+				}
+			}
 		}
 
+
+
+
+		//System.out.println(lectura2);
+
+		return array;
+	}
+
+	public void move(){
+		//	String[][] mapa = array;
+		mapa[2][2] = "*";
+//		while(repeticion){
+			Scanner sc = new Scanner(System.in);
+			String movil = sc.next();
+			if(movil.equals("w")){
+
+			}
+//		}
 		System.out.println(":" + movil);
 	}
-	
+
 }

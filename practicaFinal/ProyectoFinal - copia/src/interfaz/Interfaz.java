@@ -5,11 +5,9 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.InputMismatchException;
 public class Interfaz{
 
-	private static String NOMBRE_FICHERO_CSV = "registro.csv";
-	private static String NOMBRE_FICHERO = "registro.txt";
+	private static String NOMBRE_FICHERO = "registro.csv";
 
 	Registro registro = inicializarRegistro();
 
@@ -27,7 +25,8 @@ public class Interfaz{
 				annadirZapato(zapatoDeVestir);
 				guardarRegistro(registro);
 			}else{
-				System.out.println("El sistema no ha podido añadir el zapato. Introducelo bien gili******");
+				System.out.println("El sistema no reconoce que zapato quieres añadir.");
+				printHelp();
 			}
 
 
@@ -42,35 +41,19 @@ public class Interfaz{
 			}else{
 				System.out.println("El sistema no reconoce que zapato quieres eliminar");
 			}
-<<<<<<< HEAD
-		}else if(partes[0].equalsIgnoreCase("help") && partes.length == 1){
-			printHelp();
-		}else if(partes[0].equalsIgnoreCase("edit") && 
-=======
-		}else if(partes[0].equalsIgnoreCase("help")){
-			printHelp();
-		}else if(partes[0].equalsIgnoreCase("generarCSV")){
-			generarCSV(registro);
-		}else if(partes[0].equalsIgnoreCase("list")){
-			System.out.println("Estos son los productos que tienes en el registro:\n");
-			System.out.println(registro);
-		}else if(partes[0].equalsIgnoreCase("edit")){
-		}else{
-			System.out.println("Pon algo con sentido");
 		}
->>>>>>> 9f3e892fdbad539c7b69f60b9717bc8331783a15
 	}
 
-	private static void printHelp(){
+	private static String printHelp(){
 		String help = "Opciones del sistema:"
 			+ "\n Para añadir un zapato utilice 'add' acompañado de:"
 			+ "\n   tipo de zapato: 'zapatilla' o 'zapato de vestir'."
 			+ "\n   datos del zapato:"
 			+ "\n     Para zapatila: nombre, talla, color, precio inicial."
 			+ "\n     Para zapato de vestir: nombre, talla, material, precio inicial.";
-		System.out.println(help);
+		return help;
 	}
-
+	
 	private static void annadirZapato(Zapatos zapato){
 		Registro registro = new Registro();
 		registro.addZapato(zapato);
@@ -79,26 +62,23 @@ public class Interfaz{
 	private static Registro inicializarRegistro(){
 		Registro registro = new Registro();
 		try{
-
-
 			File file = new File(NOMBRE_FICHERO);
 			Scanner sc = new Scanner(file);
 			while(sc.hasNext()){
 				String tipoDeZapato = sc.next();
 				String nombre = sc.next();
-				String talla = sc.next();
-
+				float talla = sc.nextFloat();
 				if(tipoDeZapato.equalsIgnoreCase("Zapatilla")){
 					String color = sc.next();
-					String precioInicial = sc.next();
+					int precioInicial = sc.nextInt();
 					int precioFinal = sc.nextInt();
-					Zapatillas zapatilla = new Zapatillas(nombre, Float.parseFloat(talla), color, Integer.parseInt(precioInicial));
+					Zapatillas zapatilla = new Zapatillas(nombre, talla, color, precioInicial);
 					registro.addZapato(zapatilla);
 				}else{
 					String material = sc.next();
-					String precioInicial = sc.next();
+					int precioInicial = sc.nextInt();
 					int precioFinal = sc.nextInt();
-					ZapatosVestir zapatoVestir = new ZapatosVestir(nombre, Float.parseFloat(talla), material, Integer.parseInt(precioInicial));
+					ZapatosVestir zapatoVestir = new ZapatosVestir(nombre, talla, material, precioInicial);
 					registro.addZapato(zapatoVestir);
 				}
 			}
@@ -107,25 +87,15 @@ public class Interfaz{
 		}
 		return registro;
 	}
-	private static void guardarRegistro(Registro registro){
-		try{
-			FileWriter fw = new FileWriter(NOMBRE_FICHERO);
-			fw.write(registro.toString());
-			fw.close();
-		}catch(IOException p){
-			System.out.println("Ha habido un error al guardar el fichero");
-		}
-		System.out.println("Se ha guardado el registro con exito");
-	}
 
-	private static void generarCSV(Registro registro){
+	private static void guardarRegistro(Registro registro){
 		try{
 			FileWriter fw = new FileWriter(NOMBRE_FICHERO);
 			fw.write(registro.toCSV());
 			fw.close();
+			System.out.println("Se ha generado un CSV");
 		}catch(IOException e){
-			System.out.println("No se ha generado el csv");
 		}
-		System.out.println("Se ha generado el csv");
 	}
+
 }
