@@ -9,6 +9,7 @@ public class Mapa{
 	private String lectura2 = "";
 	private String WALL = "█";
 	private String[][] mapa = leerMapa();
+
 	public String[][] leerMapa(){
 		try{
 			File file = new File(NOMBRE_MAPA);
@@ -24,25 +25,25 @@ public class Mapa{
 		String filas[] = lectura.split("\n");
 		String columnas[] = filas[0].split("");
 
-		String [][] array = new String[filas.length][columnas.length];;;
+		String [][] mapa = new String[filas.length][columnas.length];
 		//array = new String[filas.length][columnas.length];
 
 
 		for(int i = 0; i < filas.length; i++){
 			String[] linea = filas[i].split("");
 			for(int j = 0; j < linea.length; j++){
-				array[i][j] = linea[j];
+				mapa[i][j] = linea[j];
 			}
 		}
-		//System.out.println(columnas.length);
+//		System.out.println(filas.length);
 
-		for(int i = 0; i < array.length; i++){
-			for(int j = 0; j < array.length; j++){
-				if(array[i][j].equals("X")){
-					lectura2 += array[i][j].replace("X", "█");
+		for(int i = 0; i < filas.length; i++){
+			for(int j = 0; j < columnas.length; j++){
+				if(mapa[i][j].equals("X")){
+					lectura2 += mapa[i][j].replace("X", "█");
 					//lectura2 += array[i][j];
 				}else{
-					lectura2 += array[i][j];
+					lectura2 += mapa[i][j];
 				}
 				if(j == columnas.length - 1){
 					lectura2 += "\n";
@@ -53,22 +54,22 @@ public class Mapa{
 
 
 
-		//System.out.println(lectura2);
+		System.out.println(lectura2);
 
-		return array;
+		return mapa;
 	}
-
+/*
 	public void move(){
 		//	String[][] mapa = array;
 		mapa[2][2] = "*";
-//		while(repeticion){
-			Scanner sc = new Scanner(System.in);
-			String movil = sc.next();
-			if(movil.equals("w")){
+		//		while(repeticion){
+		Scanner sc = new Scanner(System.in);
+		String movil = sc.next();
+		if(movil.equals("w")){
 
-			}
-//		}
+		}
+		//		}
 		System.out.println(":" + movil);
 	}
-
+*/
 }
